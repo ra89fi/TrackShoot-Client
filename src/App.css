@@ -44,3 +44,15 @@ header {
     right: 30px;
     top: 0;
 }
+
+.collectionHeader {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.border {
+    width: 50px;
+    margin: 0 auto;
+    border-bottom: 3px solid #af052d;
+    margin-bottom: 50px;
+}

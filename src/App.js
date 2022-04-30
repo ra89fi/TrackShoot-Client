@@ -19,7 +19,7 @@ function App() {
                             <div>
                                 <h4>Latest Collection</h4>
                                 <p>30% Discount</p>
-                                <a href="#">Shop Now</a>
+                                <a href="#cart">Shop Now</a>
                             </div>
                         </div>
                         <div>
@@ -30,15 +30,19 @@ function App() {
                             <div>
                                 <h4>Latest Collection</h4>
                                 <p>30% Discount</p>
-                                <a href="#">Shop Now</a>
+                                <a href="#cart">Shop Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <ProductList type="latest" count={6}>
-                Latest Products
-            </ProductList>
+            <div className="container">
+                <h2 className="collectionHeader">Latest Collection</h2>
+                <div className="border"></div>
+                <ProductList type="latest" count={6}>
+                    Latest Products
+                </ProductList>
+            </div>
             <div className="ads">Ads</div>
             <ProductList type="best" count={3}>
                 Best Sellers
