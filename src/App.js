@@ -69,9 +69,9 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <ProductList type="best" count={3}>
-                    Best Sellers
-                </ProductList>
+                <h2 className="collectionHeader">Best Selling Products</h2>
+                <div className="border"></div>
+                <ProductList type="best" count={3}></ProductList>
                 <div className="offers">Offers</div>
             </div>
             <footer>Footer</footer>
