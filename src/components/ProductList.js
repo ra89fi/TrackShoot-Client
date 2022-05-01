@@ -20,7 +20,7 @@ const ProductList = ({ type, count }) => {
                     <h4>{item.name}</h4>
                     <h3>${item.price}</h3>
                     <div>
-                        <a href="#cart">Add to Cart</a>
+                        <a href="#cart">Manage</a>
                     </div>
                 </div>
             ))}

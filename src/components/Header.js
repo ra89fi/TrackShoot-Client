@@ -12,10 +12,23 @@ const Header = () => {
     const logOut = () => signOut(auth);
     return (
         <header>
+            <div>
+                <h1>TrackShoot</h1>
+            </div>
             <ul>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
+                {user && (
+                    <li>
+                        <Link to="/manage">Manage Items</Link>
+                    </li>
+                )}
+                {user && (
+                    <li>
+                        <Link to="/add">Add Item</Link>
+                    </li>
+                )}
                 {!user && (
                     <li>
                         <Link to="/register">Register</Link>
