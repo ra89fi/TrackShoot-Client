@@ -12,7 +12,7 @@ const ProductList = ({ type, count }) => {
     return (
         <div className="productList">
             {products?.slice(0, count).map((item) => (
-                <div className="productItem">
+                <div className="productItem" key={item.name}>
                     <a href="#item">
                         <img src={item.src} alt={item.name} />
                     </a>

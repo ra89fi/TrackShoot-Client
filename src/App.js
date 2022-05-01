@@ -1,79 +1,34 @@
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
-import ProductList from './components/ProductList';
+import Header from './components/Header';
+import Home from './components/Home';
+import Login from './components/Login';
+import Register from './components/Register';
+
+import app from './firebase.init';
+import { getAuth } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+const auth = getAuth(app);
+
+const RequireAuth = ({ children }) => {
+    let location = useLocation();
+    const [user] = useAuthState(auth);
+    if (!user) {
+        return <Navigate to="/login" state={{ from: location }} replace />;
+    }
+    return children;
+};
 
 function App() {
     return (
         <div className="App">
-            <header>Header</header>
-            <div className="banner">
-                <div className="container">
-                    <div className="left">
-                        <img src="images/sample-1.jpg" alt="Sample Shoe" />
-                    </div>
-                    <div className="right">
-                        <div>
-                            <img
-                                src="images/sub-banner-2.jpg"
-                                alt="Men's Shoe"
-                            />
-                            <div>
-                                <h4>Latest Collection</h4>
-                                <p>30% Discount</p>
-                                <a href="#cart">Shop Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img
-                                src="images/cms-banner-1.jpg"
-                                alt="Men's Shoe"
-                            />
-                            <div>
-                                <h4>Latest Collection</h4>
-                                <p>30% Discount</p>
-                                <a href="#cart">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="container">
-                <h2 className="collectionHeader">Latest Collection</h2>
-                <div className="border"></div>
-                <ProductList type="latest" count={6}>
-                    Latest Products
-                </ProductList>
-                <p className="collectionHeader">
-                    <a href="#products">See All Products</a>
-                </p>
-                <div className="ads">
-                    <div>
-                        <img src="images/cms-banner-2.jpg" alt="Men's Shoe" />
-                        <div>
-                            <h4>New Collection</h4>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="images/sub-banner-2.jpg" alt="Men's Shoe" />
-                        <div>
-                            <h4>Latest Collection</h4>
-                            <p>30% Discount</p>
-                            <a href="#cart">Shop Now</a>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="images/cms-banner-1.jpg" alt="Men's Shoe" />
-                        <div>
-                            <h4>Latest Collection</h4>
-                            <p>30% Discount</p>
-                            <a href="#cart">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-                <h2 className="collectionHeader">Best Selling Products</h2>
-                <div className="border"></div>
-                <ProductList type="best" count={3}></ProductList>
-                <div className="offers">Offers</div>
-            </div>
+            <Header></Header>
+            <Routes>
+                <Route path="/" element={<Home></Home>} />
+                <Route path="/login" element={<Login></Login>} />
+                <Route path="/register" element={<Register></Register>} />
+                <Route path="*" element={<h4>Not Found!</h4>} />
+            </Routes>
             <footer>Footer</footer>
         </div>
     );
