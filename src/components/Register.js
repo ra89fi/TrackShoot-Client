@@ -34,8 +34,17 @@ const Register = () => {
         }
     }, [user]);
     return (
-        <div className="register">
-            <form onSubmit={handleSubmit} ref={formRef}>
+        <div style={{ width: '400px', margin: '60px auto' }}>
+            <form
+                onSubmit={handleSubmit}
+                ref={formRef}
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '200px',
+                    justifyContent: 'space-evenly',
+                }}
+            >
                 <input
                     type="text"
                     className="form-control"

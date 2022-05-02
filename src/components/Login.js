@@ -35,8 +35,17 @@ const Login = () => {
         }
     }, [user]);
     return (
-        <div className="login">
-            <form onSubmit={handleSubmit} ref={formRef}>
+        <div style={{ width: '400px', margin: '60px auto' }}>
+            <form
+                onSubmit={handleSubmit}
+                ref={formRef}
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '200px',
+                    justifyContent: 'space-evenly',
+                }}
+            >
                 <input
                     type="email"
                     className="form-control"
