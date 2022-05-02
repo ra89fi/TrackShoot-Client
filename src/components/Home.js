@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductList from './ProductList';
 
 const Home = () => {
+    const [products, setProducts] = useState([]);
     // useEffect here to fetch products
+    useEffect(() => {
+        fetch('http://localhost:5000/items')
+            .then((data) => data.json())
+            .then((products) => setProducts(products))
+            .catch((err) => console.log(err.message));
+    }, []);
     // ProductList will just display them
     return (
         <div>
@@ -38,7 +45,9 @@ const Home = () => {
             <div className="container">
                 <h2 className="collectionHeader">Latest Products</h2>
                 <div className="border"></div>
-                <ProductList type="latest" count={6}></ProductList>
+                <ProductList
+                    products={[...products].reverse().slice(0, 6)}
+                ></ProductList>
                 <p className="collectionHeader">
                     <a href="/inventory">Manage Inventories</a>
                 </p>
@@ -67,7 +76,17 @@ const Home = () => {
                 </div>
                 <h2 className="collectionHeader">Best Selling Products</h2>
                 <div className="border"></div>
-                <ProductList type="best" count={3}></ProductList>
+                <ProductList
+                    products={[...products]
+                        .sort(
+                            (a, b) =>
+                                (typeof b.sold === 'string') -
+                                    (typeof a.sold === 'string') ||
+                                b.sold > a.sold ||
+                                -(b.sold < a.sold)
+                        )
+                        .slice(0, 3)}
+                ></ProductList>
             </div>
         </div>
     );
