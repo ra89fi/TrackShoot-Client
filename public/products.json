@@ -3,96 +3,144 @@
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/1/8/118-home_default.jpg",
         "name": "Consectetur Hampden",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/2/4/124-home_default.jpg",
         "name": "Exercitat Virginia",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/2/1/2/212-home_default.jpg",
         "name": "Accusantium doloremque",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/3/6/136-home_default.jpg",
         "name": "Voluptas assumenda",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/4/2/142-home_default.jpg",
         "name": "Nostrud exercitation",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/2/1/7/217-home_default.jpg",
         "name": "Commodi consequatur",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/5/5/155-home_default.jpg",
         "name": "Praesentium voluptatum",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/6/1/161-home_default.jpg",
         "name": "Voluptates repudiandae",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/1/9/119-home_default.jpg",
         "name": "Consectetur Hampden",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/2/5/125-home_default.jpg",
         "name": "Exercitat Virginia",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/3/1/131-home_default.jpg",
         "name": "Accusantium doloremque",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/2/1/4/214-home_default.jpg",
         "name": "Voluptas assumenda",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/4/4/144-home_default.jpg",
         "name": "Nostrud exercitation",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/4/9/149-home_default.jpg",
         "name": "Commodi consequatur",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/5/7/157-home_default.jpg",
         "name": "Praesentium voluptatum",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     },
     {
         "src": "https://capricathemes.com/prestashop/PRS13/PRS130306/PRS02/img/p/1/6/2/162-home_default.jpg",
         "name": "Voluptates repudiandae",
         "rating": 4.3,
-        "price": 69.99
+        "price": 69.99,
+        "description": "This is description",
+        "quantity": 1,
+        "supplier": "raihan"
     }
 ]

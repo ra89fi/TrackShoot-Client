@@ -9,7 +9,7 @@ const Home = () => {
             <div className="banner">
                 <div className="container">
                     <div className="left">
-                        <img src="images/sample-1.jpg" alt="Sample Shoe" />
+                        <img src="images/parallax-bg.jpg" alt="Sample Shoe" />
                     </div>
                     <div className="right">
                         <div>
@@ -18,9 +18,8 @@ const Home = () => {
                                 alt="Men's Shoe"
                             />
                             <div>
-                                <h4>Latest Collection</h4>
-                                <p>30% Discount</p>
-                                <a href="#cart">Shop Now</a>
+                                <br />
+                                <h6>Commodi consequatur</h6>
                             </div>
                         </div>
                         <div>
@@ -29,44 +28,40 @@ const Home = () => {
                                 alt="Men's Shoe"
                             />
                             <div>
-                                <h4>Latest Collection</h4>
-                                <p>30% Discount</p>
-                                <a href="#cart">Shop Now</a>
+                                <br />
+                                <h6>Voluptas assumenda</h6>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="container">
-                <h2 className="collectionHeader">Latest Collection</h2>
+                <h2 className="collectionHeader">Latest Products</h2>
                 <div className="border"></div>
-                <ProductList type="latest" count={6}>
-                    Latest Products
-                </ProductList>
+                <ProductList type="latest" count={6}></ProductList>
                 <p className="collectionHeader">
-                    <a href="#products">See All Products</a>
+                    <a href="/inventory">Manage Inventories</a>
                 </p>
                 <div className="ads">
                     <div>
                         <img src="images/cms-banner-2.jpg" alt="Men's Shoe" />
                         <div>
-                            <h4>New Collection</h4>
+                            <br />
+                            <h6>Consectetur Hampden</h6>
                         </div>
                     </div>
                     <div>
                         <img src="images/sub-banner-2.jpg" alt="Men's Shoe" />
                         <div>
-                            <h4>Latest Collection</h4>
-                            <p>30% Discount</p>
-                            <a href="#cart">Shop Now</a>
+                            <br />
+                            <h6>Exercitat Virginia</h6>
                         </div>
                     </div>
                     <div>
                         <img src="images/cms-banner-1.jpg" alt="Men's Shoe" />
                         <div>
-                            <h4>Latest Collection</h4>
-                            <p>30% Discount</p>
-                            <a href="#cart">Shop Now</a>
+                            <br />
+                            <h6>Accusantium doloremque</h6>
                         </div>
                     </div>
                 </div>

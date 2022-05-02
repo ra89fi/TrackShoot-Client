@@ -15,7 +15,7 @@
 .productItem:hover div {
     display: block;
     position: absolute;
-    top: 60%;
+    top: 282px;
     left: 30%;
     width: 100%;
 }

@@ -37,7 +37,7 @@ const Header = () => {
                 <li>
                     {!user && <Link to="/login">Login</Link>}
                     {user && (
-                        <button className="btn btn-primary" onClick={logOut}>
+                        <button className="btn btn-warning" onClick={logOut}>
                             Log Out
                         </button>
                     )}

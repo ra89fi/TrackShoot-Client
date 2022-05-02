@@ -13,14 +13,14 @@ const ProductList = ({ type, count }) => {
         <div className="productList">
             {products?.slice(0, count).map((item) => (
                 <div className="productItem" key={item.name}>
-                    <a href="#item">
-                        <img src={item.src} alt={item.name} />
-                    </a>
+                    <img src={item.src} alt={item.name} />
                     <p>{item.rating}</p>
-                    <h4>{item.name}</h4>
-                    <h3>${item.price}</h3>
+                    <h5>{item.name}</h5>
+                    <p>{item.description}</p>
+                    <p>{item.supplier}</p>
+                    <h4>${item.price}</h4>
                     <div>
-                        <a href="#cart">Manage</a>
+                        <a href={`/inventory/${item._id}`}>Manage</a>
                     </div>
                 </div>
             ))}
