@@ -28,11 +28,14 @@ const Inventory = () => {
     return (
         <div>
             {products.length ? (
-                <table>
-                    <thead>
+                <table
+                    className="table"
+                    style={{ width: '85%', margin: '60px auto' }}
+                >
+                    <thead className="thead-dark">
                         <tr>
                             {keys.map((key) => (
-                                <th key={key}>
+                                <th key={key} scope="col">
                                     {key[0].toUpperCase() + key.slice(1)}
                                 </th>
                             ))}
