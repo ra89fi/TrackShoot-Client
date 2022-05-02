@@ -10,9 +10,56 @@ const Item = () => {
             .then((item) => setItem(item))
             .catch((err) => console.log(err.message));
     }, []);
-    const keys = ['_id', 'image'];
-    const onDelivered = () => {};
-    const onAdd = () => {};
+    const keys = ['_id', 'image', 'lastModified', 'count'];
+    const onDelivered = () => {
+        fetch(`${process.env.REACT_APP_BACK_URL}/items/${params.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                quantity: item.quantity - 1,
+                sold: item.sold + 1,
+            }),
+        })
+            .then((data) => data.json())
+            .then((result) => {
+                console.log(result);
+                if (result.message === 'ok') {
+                    setItem({
+                        ...item,
+                        quantity: item.quantity - 1,
+                        sold: item.sold + 1,
+                    });
+                }
+            })
+            .catch((err) => console.log(err.message));
+    };
+    const onAdd = (e) => {
+        e.preventDefault();
+        fetch(`${process.env.REACT_APP_BACK_URL}/items/${params.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                quantity: item.quantity + parseInt(e.target.stock.value),
+            }),
+        })
+            .then((data) => data.json())
+            .then((result) => {
+                console.log(result);
+                if (result.message === 'ok') {
+                    setItem({
+                        ...item,
+                        quantity:
+                            item.quantity + parseInt(e.target.stock.value),
+                    });
+                    e.target.reset();
+                }
+            })
+            .catch((err) => console.log(err.message));
+    };
     return (
         <div style={{ width: '65%', margin: '60px auto' }}>
             <div style={{ display: 'flex' }}>
@@ -42,12 +89,15 @@ const Item = () => {
                         Delivered
                     </button>
                 </p>
-                <p style={{ display: 'flex', alignItems: 'center' }}>
-                    <input type="number" /> &nbsp;{' '}
-                    <button className="btn btn-warning" onClick={onAdd}>
+                <form
+                    style={{ display: 'flex', alignItems: 'center' }}
+                    onSubmit={onAdd}
+                >
+                    <input name="stock" type="number" required /> &nbsp;{' '}
+                    <button className="btn btn-warning" type="submit">
                         Add to Stock
                     </button>
-                </p>
+                </form>
                 <p>
                     <a href="/inventory">Manage Inventories</a>
                 </p>
