@@ -5,7 +5,7 @@ const Home = () => {
     const [products, setProducts] = useState([]);
     // useEffect here to fetch products
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch(`${process.env.REACT_APP_BACK_URL}/items`)
             .then((data) => data.json())
             .then((products) => setProducts(products))
             .catch((err) => console.log(err.message));
