@@ -21,12 +21,17 @@ const Header = () => {
                 </li>
                 {user && (
                     <li>
-                        <Link to="/manage">Manage Items</Link>
+                        <Link to="/inventory">Manage Items</Link>
                     </li>
                 )}
                 {user && (
                     <li>
-                        <Link to="/add">Add Item</Link>
+                        <Link to="/newitem">Add Item</Link>
+                    </li>
+                )}
+                {user && (
+                    <li>
+                        <Link to="/myitems">My Items</Link>
                     </li>
                 )}
                 {!user && (

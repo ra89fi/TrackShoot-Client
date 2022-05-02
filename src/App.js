@@ -10,6 +10,8 @@ import { getAuth } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Item from './components/Item';
 import Inventory from './components/Inventory';
+import MyItems from './components/MyItems';
+import NewItem from './components/NewItem';
 const auth = getAuth(app);
 
 const RequireAuth = ({ children }) => {
@@ -29,6 +31,22 @@ function App() {
                 <Route path="/" element={<Home></Home>} />
                 <Route path="/login" element={<Login></Login>} />
                 <Route path="/register" element={<Register></Register>} />
+                <Route
+                    path="/myitems"
+                    element={
+                        <RequireAuth>
+                            <MyItems></MyItems>
+                        </RequireAuth>
+                    }
+                />
+                <Route
+                    path="/newitem"
+                    element={
+                        <RequireAuth>
+                            <NewItem></NewItem>
+                        </RequireAuth>
+                    }
+                />
                 <Route
                     path="/inventory/:id"
                     element={

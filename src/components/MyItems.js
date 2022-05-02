@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
-const Inventory = () => {
+import app from '../firebase.init';
+import { getAuth } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+const auth = getAuth(app);
+
+const MyItems = () => {
+    const [user] = useAuthState(auth);
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_URL}/items`)
+        fetch(
+            `${process.env.REACT_APP_BACK_URL}/items?supplier=${
+                user.email.split('@')[0]
+            }`
+        )
             .then((data) => data.json())
             .then((products) => setProducts(products))
             .catch((err) => console.log(err.message));
-    }, []);
+    }, [user]);
     const keys = ['name', 'rating', 'price', 'quantity', 'supplier', 'sold'];
     const deleteItem = (id) => {
         fetch(`${process.env.REACT_APP_BACK_URL}/items/${id}`, {
@@ -28,9 +38,6 @@ const Inventory = () => {
     };
     return (
         <div>
-            <p style={{ margin: '60px 100px 0px' }}>
-                <Link to="/newitem">Add New Item</Link>
-            </p>
             {products.length ? (
                 <table
                     className="table"
@@ -71,4 +78,4 @@ const Inventory = () => {
     );
 };
 
-export default Inventory;
+export default MyItems;
