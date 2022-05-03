@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import app from '../firebase.init';
 import { getAuth } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 
 const auth = getAuth(app);
 
@@ -60,6 +61,10 @@ const MyItems = () => {
                                     <td key={key}>{item[key]}</td>
                                 ))}
                                 <td key="action">
+                                    <Link to={`/inventory/${item._id}`}>
+                                        Manage
+                                    </Link>
+                                    &nbsp; &nbsp;
                                     <button
                                         className="btn btn-danger"
                                         onClick={() => deleteItem(item._id)}
