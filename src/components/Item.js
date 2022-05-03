@@ -98,12 +98,23 @@ const Item = () => {
                         onSubmit={onAdd}
                     >
                         <input name="stock" type="number" required /> &nbsp;{' '}
-                        <button className="btn btn-warning" type="submit">
+                        <button className="btn btn-primary" type="submit">
                             Add to Stock
                         </button>
                     </form>
                     <p>
-                        <a href="/inventory">Manage Inventories</a>
+                        <a
+                            href="/inventory"
+                            style={{
+                                textDecoration: 'none',
+                                padding: '8px 30px',
+                                borderRadius: '3px',
+                                backgroundColor: '#af052d',
+                                color: '#fff',
+                            }}
+                        >
+                            Manage Inventories
+                        </a>
                     </p>
                 </div>
             </div>

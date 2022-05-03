@@ -92,7 +92,11 @@ const NewItem = () => {
                         id="description"
                         required
                     />
-                    <button className="btn btn-info" type="submit" id="submit">
+                    <button
+                        className="btn btn-danger"
+                        type="submit"
+                        id="submit"
+                    >
                         Submit
                     </button>
                 </form>

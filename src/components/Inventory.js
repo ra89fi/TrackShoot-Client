@@ -34,7 +34,18 @@ const Inventory = () => {
         <div>
             <div>
                 <p style={{ margin: '60px 100px 0px' }}>
-                    <Link to="/newitem">Add New Item</Link>
+                    <Link
+                        to="/newitem"
+                        style={{
+                            textDecoration: 'none',
+                            padding: '12px 30px',
+                            borderRadius: '3px',
+                            backgroundColor: '#af052d',
+                            color: '#fff',
+                        }}
+                    >
+                        Add New Item
+                    </Link>
                 </p>
                 {products.length ? (
                     <table
@@ -58,7 +69,16 @@ const Inventory = () => {
                                         <td key={key}>{item[key]}</td>
                                     ))}
                                     <td key="action">
-                                        <Link to={`/inventory/${item._id}`}>
+                                        <Link
+                                            to={`/inventory/${item._id}`}
+                                            style={{
+                                                textDecoration: 'none',
+                                                padding: '8px 30px',
+                                                borderRadius: '3px',
+                                                backgroundColor: '#af052d',
+                                                color: '#fff',
+                                            }}
+                                        >
                                             Manage
                                         </Link>
                                         &nbsp; &nbsp;

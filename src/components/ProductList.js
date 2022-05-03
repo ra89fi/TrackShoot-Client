@@ -8,9 +8,9 @@ const ProductList = ({ products }) => {
             {products.map((item) => (
                 <div className="productItem" key={item._id}>
                     <img src={item.image} alt={item.name} />
-                    <p>{item.rating}</p>
+                    <p style={{ margin: '5px 0' }}>{item.rating}</p>
                     <h5>{item.name}</h5>
-                    <h4>${item.price}</h4>
+                    <h4 style={{ color: '#af052d' }}>${item.price}</h4>
                     <div>
                         <a href={`/inventory/${item._id}`}>Manage</a>
                     </div>
