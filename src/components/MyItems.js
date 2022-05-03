@@ -22,6 +22,10 @@ const MyItems = () => {
     }, [user]);
     const keys = ['name', 'rating', 'price', 'quantity', 'supplier', 'sold'];
     const deleteItem = (id) => {
+        const ans = window.confirm(
+            'Are you sure you want to delete this item?'
+        );
+        if (!ans) return;
         fetch(`${process.env.REACT_APP_BACK_URL}/items/${id}`, {
             method: 'DELETE',
         })

@@ -63,7 +63,14 @@ function App() {
                         </RequireAuth>
                     }
                 />
-                <Route path="*" element={<h4>Not Found!</h4>} />
+                <Route
+                    path="*"
+                    element={
+                        <div style={{ margin: '60px' }}>
+                            <h4>Not Found!</h4>
+                        </div>
+                    }
+                />
             </Routes>
             <footer>Footer</footer>
         </div>
