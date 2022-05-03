@@ -32,49 +32,62 @@ const Inventory = () => {
     };
     return (
         <div>
-            <p style={{ margin: '60px 100px 0px' }}>
-                <Link to="/newitem">Add New Item</Link>
-            </p>
-            {products.length ? (
-                <table
-                    className="table"
-                    style={{ width: '85%', margin: '30px auto' }}
-                >
-                    <thead className="thead-dark">
-                        <tr>
-                            {keys.map((key) => (
-                                <th key={key} scope="col">
-                                    {key[0].toUpperCase() + key.slice(1)}
-                                </th>
-                            ))}
-                            <th key="action">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {products.map((item) => (
-                            <tr key={item._id}>
+            <div>
+                <p style={{ margin: '60px 100px 0px' }}>
+                    <Link to="/newitem">Add New Item</Link>
+                </p>
+                {products.length ? (
+                    <table
+                        className="table"
+                        style={{ width: '85%', margin: '30px auto' }}
+                    >
+                        <thead className="thead-dark">
+                            <tr>
                                 {keys.map((key) => (
-                                    <td key={key}>{item[key]}</td>
+                                    <th key={key} scope="col">
+                                        {key[0].toUpperCase() + key.slice(1)}
+                                    </th>
                                 ))}
-                                <td key="action">
-                                    <Link to={`/inventory/${item._id}`}>
-                                        Manage
-                                    </Link>
-                                    &nbsp; &nbsp;
-                                    <button
-                                        className="btn btn-danger"
-                                        onClick={() => deleteItem(item._id)}
-                                    >
-                                        Delete
-                                    </button>
-                                </td>
+                                <th key="action">Action</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            ) : (
-                <p>No products found!</p>
-            )}
+                        </thead>
+                        <tbody>
+                            {products.map((item) => (
+                                <tr key={item._id}>
+                                    {keys.map((key) => (
+                                        <td key={key}>{item[key]}</td>
+                                    ))}
+                                    <td key="action">
+                                        <Link to={`/inventory/${item._id}`}>
+                                            Manage
+                                        </Link>
+                                        &nbsp; &nbsp;
+                                        <button
+                                            className="btn btn-danger"
+                                            onClick={() => deleteItem(item._id)}
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                ) : (
+                    <p>No products found!</p>
+                )}
+            </div>
+            <footer
+                style={{
+                    marginTop: '60px',
+                    padding: '40px 0',
+                    backgroundColor: '#1a1a1a',
+                    textAlign: 'center',
+                    color: '#eee',
+                }}
+            >
+                Copyright &copy;2022
+            </footer>
         </div>
     );
 };

@@ -46,57 +46,70 @@ const NewItem = () => {
             });
     };
     return (
-        <div style={{ width: '400px', margin: '60px auto' }}>
-            <form
-                onSubmit={onSubmit}
+        <div>
+            <div style={{ width: '400px', margin: '60px auto' }}>
+                <form
+                    onSubmit={onSubmit}
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        minHeight: '450px',
+                        justifyContent: 'space-evenly',
+                    }}
+                >
+                    Name
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="name"
+                        required
+                    />
+                    Image URL
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="image"
+                        required
+                    />
+                    Price
+                    <input
+                        type="number"
+                        className="form-control"
+                        id="price"
+                        required
+                    />
+                    Quantity
+                    <input
+                        type="number"
+                        className="form-control"
+                        id="quantity"
+                        required
+                    />
+                    Description
+                    <textarea
+                        rows="3"
+                        className="form-control"
+                        id="description"
+                        required
+                    />
+                    <button className="btn btn-info" type="submit" id="submit">
+                        Submit
+                    </button>
+                </form>
+                {error && <p className="text-danger errTxt">{error.message}</p>}
+                {loading && <p>Loading...</p>}
+            </div>
+            <footer
                 style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    minHeight: '450px',
-                    justifyContent: 'space-evenly',
+                    marginTop: '60px',
+                    padding: '40px 0',
+                    backgroundColor: '#1a1a1a',
+                    textAlign: 'center',
+                    color: '#eee',
                 }}
             >
-                Name
-                <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    required
-                />
-                Image URL
-                <input
-                    type="text"
-                    className="form-control"
-                    id="image"
-                    required
-                />
-                Price
-                <input
-                    type="number"
-                    className="form-control"
-                    id="price"
-                    required
-                />
-                Quantity
-                <input
-                    type="number"
-                    className="form-control"
-                    id="quantity"
-                    required
-                />
-                Description
-                <textarea
-                    rows="3"
-                    className="form-control"
-                    id="description"
-                    required
-                />
-                <button className="btn btn-info" type="submit" id="submit">
-                    Submit
-                </button>
-            </form>
-            {error && <p className="text-danger errTxt">{error.message}</p>}
-            {loading && <p>Loading...</p>}
+                Copyright &copy;2022
+            </footer>
         </div>
     );
 };

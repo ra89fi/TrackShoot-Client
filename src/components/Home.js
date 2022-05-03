@@ -88,6 +88,17 @@ const Home = () => {
                         .slice(0, 3)}
                 ></ProductList>
             </div>
+            <footer
+                style={{
+                    marginTop: '60px',
+                    padding: '40px 0',
+                    backgroundColor: '#1a1a1a',
+                    textAlign: 'center',
+                    color: '#eee',
+                }}
+            >
+                Copyright &copy;2022
+            </footer>
         </div>
     );
 };

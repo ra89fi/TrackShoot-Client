@@ -61,47 +61,63 @@ const Item = () => {
             .catch((err) => console.log(err.message));
     };
     return (
-        <div style={{ width: '65%', margin: '60px auto' }}>
-            <div style={{ display: 'flex' }}>
-                <img src={item.image} alt={item.name} />
-                <div style={{ marginLeft: '20px' }}>
-                    {Object.keys(item).map(
-                        (key) =>
-                            !keys.includes(key) && (
-                                <p key={key}>
-                                    {key[0].toUpperCase() + key.slice(1)} :{' '}
-                                    {item[key]}
-                                </p>
-                            )
-                    )}
+        <div>
+            <div style={{ width: '65%', margin: '60px auto' }}>
+                <div style={{ display: 'flex' }}>
+                    <img src={item.image} alt={item.name} />
+                    <div style={{ marginLeft: '20px' }}>
+                        {Object.keys(item).map(
+                            (key) =>
+                                !keys.includes(key) && (
+                                    <p key={key}>
+                                        {key[0].toUpperCase() + key.slice(1)} :{' '}
+                                        {item[key]}
+                                    </p>
+                                )
+                        )}
+                    </div>
+                </div>
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        marginTop: '20px',
+                    }}
+                >
+                    <p>
+                        <button
+                            className="btn btn-danger"
+                            onClick={onDelivered}
+                        >
+                            Delivered
+                        </button>
+                    </p>
+                    <form
+                        style={{ display: 'flex', alignItems: 'center' }}
+                        onSubmit={onAdd}
+                    >
+                        <input name="stock" type="number" required /> &nbsp;{' '}
+                        <button className="btn btn-warning" type="submit">
+                            Add to Stock
+                        </button>
+                    </form>
+                    <p>
+                        <a href="/inventory">Manage Inventories</a>
+                    </p>
                 </div>
             </div>
-            <div
+            <footer
                 style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginTop: '20px',
+                    marginTop: '60px',
+                    padding: '40px 0',
+                    backgroundColor: '#1a1a1a',
+                    textAlign: 'center',
+                    color: '#eee',
                 }}
             >
-                <p>
-                    <button className="btn btn-danger" onClick={onDelivered}>
-                        Delivered
-                    </button>
-                </p>
-                <form
-                    style={{ display: 'flex', alignItems: 'center' }}
-                    onSubmit={onAdd}
-                >
-                    <input name="stock" type="number" required /> &nbsp;{' '}
-                    <button className="btn btn-warning" type="submit">
-                        Add to Stock
-                    </button>
-                </form>
-                <p>
-                    <a href="/inventory">Manage Inventories</a>
-                </p>
-            </div>
+                Copyright &copy;2022
+            </footer>
         </div>
     );
 };

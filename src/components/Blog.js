@@ -32,6 +32,20 @@ const Blog = () => {
                 that to communicate to server as server can verify the
                 authenticity of client by decoding that value.
             </p>
+            <footer
+                style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: '40px 0',
+                    backgroundColor: '#1a1a1a',
+                    textAlign: 'center',
+                    color: '#eee',
+                }}
+            >
+                Copyright &copy;2022
+            </footer>
         </div>
     );
 };

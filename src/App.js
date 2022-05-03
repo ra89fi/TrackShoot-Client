@@ -68,13 +68,28 @@ function App() {
                 <Route
                     path="*"
                     element={
-                        <div style={{ margin: '60px' }}>
-                            <h4>Not Found!</h4>
+                        <div>
+                            <div style={{ margin: '60px' }}>
+                                <h4>Not Found!</h4>
+                            </div>
+                            <footer
+                                style={{
+                                    position: 'absolute',
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    padding: '40px 0',
+                                    backgroundColor: '#1a1a1a',
+                                    textAlign: 'center',
+                                    color: '#eee',
+                                }}
+                            >
+                                Copyright &copy;2022
+                            </footer>
                         </div>
                     }
                 />
             </Routes>
-            <footer>Footer</footer>
         </div>
     );
 }
