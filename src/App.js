@@ -12,6 +12,7 @@ import Item from './components/Item';
 import Inventory from './components/Inventory';
 import MyItems from './components/MyItems';
 import NewItem from './components/NewItem';
+import Blog from './components/Blog';
 const auth = getAuth(app);
 
 const RequireAuth = ({ children }) => {
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/" element={<Home></Home>} />
                 <Route path="/login" element={<Login></Login>} />
                 <Route path="/register" element={<Register></Register>} />
+                <Route path="/blog" element={<Blog></Blog>} />
                 <Route
                     path="/myitems"
                     element={
